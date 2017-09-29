@@ -26,6 +26,7 @@ public class Practice4Test {
 	
 	public boolean isPalindrome(String item) {
 		clearData();
+		item = item.toLowerCase().replaceAll("[^A-Za-z0-9]+", "");
 		for (int i = 0; i < item.length(); i++) {
 			stack.push(item.substring(i, i+1));
 			queue.enqueue(item.substring(i, i+1));
@@ -125,6 +126,7 @@ public class Practice4Test {
 			}
 		} catch (Exception e) {
 			// Do nothing
+			System.out.println(e);
 		} finally {
 			System.out.println("====================");
 			System.out.println("Grade for this assignment: " + grade + "%");
